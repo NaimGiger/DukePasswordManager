@@ -1,1 +1,1 @@
-# password_manager.DukePasswordManager
+# DukePasswordManager

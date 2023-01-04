@@ -1,4 +1,4 @@
-package password_manager;
+import password_manager.UserInterface;
 
 public class DukePasswordManager {
     public static void main(String[] args) {
