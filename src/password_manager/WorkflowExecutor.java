@@ -10,7 +10,7 @@ public class WorkflowExecutor {
     public void executeWorkflows() {
         TitleScreenWorkflow titleScreenWorkflow = new TitleScreenWorkflow(userInterface);
         titleScreenWorkflow.start();
-        // TODO: Implement next Workflows
-        // titleScreenWorkflow.getNextWorkflow().start();
+        Workflow nextWorkflow = titleScreenWorkflow.getNextWorkflow();
+        nextWorkflow.start();
     }
 }

@@ -23,8 +23,10 @@ public class TitleScreenWorkflow implements Workflow {
         new TextStep(userInterface, workflowSelectionOptions).execute();
         PromptStep workflowSelectionStep = new PromptStep(userInterface, "Select a workflow");
         workflowSelectionStep.execute();
-        String workflowSelection = workflowSelectionStep.getUserInput();
-        // TODO: Add selectable Workflows
+        String workflowSelection = workflowSelectionStep.getUserInput().strip();
+        if (workflowSelection.equals("00")) {
+            return new ExitWorkflow();
+        }
         return null;
     }
 }
