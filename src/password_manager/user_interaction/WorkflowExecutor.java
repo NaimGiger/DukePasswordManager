@@ -14,7 +14,7 @@ public class WorkflowExecutor {
         this.credentialGathering = credentialGathering;
     }
 
-    public void executeWorkflows() {
+    public void executeWorkflows() throws Exception {
         TitleScreenWorkflow titleScreenWorkflow = new TitleScreenWorkflow(userInterface);
         titleScreenWorkflow.start();
         while (true) {

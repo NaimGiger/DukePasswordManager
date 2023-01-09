@@ -6,6 +6,7 @@ import password_manager.user_interaction.UserInterface;
 import password_manager.user_interaction.step.PromptStep;
 import password_manager.user_interaction.step.TextStep;
 
+
 public class CreateCredentialWorkflow implements Workflow {
     private final UserInterface userInterface;
     private final CredentialGathering credentialGathering;
@@ -16,7 +17,7 @@ public class CreateCredentialWorkflow implements Workflow {
     }
 
     @Override
-    public void start() {
+    public void start() throws Exception {
         String credentialTitle = "";
         while (credentialTitle.isBlank()) {
             PromptStep titlePrompt = new PromptStep(userInterface, "Title of credential");
@@ -30,7 +31,7 @@ public class CreateCredentialWorkflow implements Workflow {
         successText.execute();
     }
 
-    private void promptAndSetUsername(Credential credential) {
+    private void promptAndSetUsername(Credential credential) throws Exception {
         PromptStep usernamePrompt = new PromptStep(userInterface, "Username (empty for no username)");
         usernamePrompt.execute();
         String username = usernamePrompt.getUserInput().strip();
@@ -39,7 +40,7 @@ public class CreateCredentialWorkflow implements Workflow {
         }
     }
 
-    private void promptAndSetPassword(Credential credential) {
+    private void promptAndSetPassword(Credential credential) throws Exception {
         PromptStep passwordPrompt = new PromptStep(userInterface, "Password (empty for no password)");
         passwordPrompt.execute();
         String password = passwordPrompt.getUserInput().strip();

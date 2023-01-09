@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CredentialGatheringTest {
     @Test
-    void initialize_createCredential_isCorrectlyCreated() {
+    void initialize_createCredential_isCorrectlyCreated() throws Exception {
         CredentialGathering credentialGathering = new CredentialGathering();
 
         Credential credential = credentialGathering.createCredential("test");
