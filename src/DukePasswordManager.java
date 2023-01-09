@@ -1,10 +1,12 @@
+import password_manager.credential.CredentialGathering;
 import password_manager.user_interaction.UserInterface;
 import password_manager.user_interaction.WorkflowExecutor;
 
 public class DukePasswordManager {
     public static void main(String[] args) {
         UserInterface userInterface = new UserInterface();
-        WorkflowExecutor workflowExecutor = new WorkflowExecutor(userInterface);
+        CredentialGathering credentialGathering = new CredentialGathering();
+        WorkflowExecutor workflowExecutor = new WorkflowExecutor(userInterface, credentialGathering);
         workflowExecutor.executeWorkflows();
     }
 }
