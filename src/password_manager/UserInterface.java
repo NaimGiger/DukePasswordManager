@@ -6,10 +6,6 @@ public class UserInterface {
 
     public static final String PROMPT_SYMBOL = "> ";
 
-    public void run() {
-
-    }
-
     public String prompt(String message) {
         System.out.println(message);
         System.out.print(PROMPT_SYMBOL);

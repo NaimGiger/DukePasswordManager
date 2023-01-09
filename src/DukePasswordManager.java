@@ -1,8 +1,10 @@
 import password_manager.UserInterface;
+import password_manager.WorkflowExecutor;
 
 public class DukePasswordManager {
     public static void main(String[] args) {
         UserInterface userInterface = new UserInterface();
-        userInterface.run();
+        WorkflowExecutor workflowExecutor = new WorkflowExecutor(userInterface);
+        workflowExecutor.executeWorkflows();
     }
 }
