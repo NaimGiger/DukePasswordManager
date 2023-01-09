@@ -1,4 +1,6 @@
-package password_manager;
+package password_manager.user_interaction.step;
+
+import password_manager.user_interaction.UserInterface;
 
 public class TextStep implements Step {
     private final UserInterface userInterface;

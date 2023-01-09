@@ -1,6 +1,9 @@
 package password_manager;
 
 import org.junit.jupiter.api.Test;
+import password_manager.credential.Credential;
+import password_manager.credential.CredentialGathering;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CredentialGatheringTest {

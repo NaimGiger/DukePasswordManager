@@ -1,4 +1,4 @@
-package password_manager;
+package password_manager.user_interaction.workflow;
 
 public class ExitWorkflow implements Workflow {
     @Override

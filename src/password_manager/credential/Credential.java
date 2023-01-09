@@ -1,11 +1,11 @@
-package password_manager;
+package password_manager.credential;
 
 public class Credential {
     private String title;
     private String username;
     private String password;
 
-    Credential(String title) {
+    public Credential(String title) {
         this.title = title;
     }
 

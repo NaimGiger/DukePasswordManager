@@ -1,5 +1,5 @@
-import password_manager.UserInterface;
-import password_manager.WorkflowExecutor;
+import password_manager.user_interaction.UserInterface;
+import password_manager.user_interaction.WorkflowExecutor;
 
 public class DukePasswordManager {
     public static void main(String[] args) {

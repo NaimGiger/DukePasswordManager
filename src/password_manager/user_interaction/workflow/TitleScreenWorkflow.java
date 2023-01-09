@@ -1,4 +1,8 @@
-package password_manager;
+package password_manager.user_interaction.workflow;
+
+import password_manager.user_interaction.step.PromptStep;
+import password_manager.user_interaction.step.TextStep;
+import password_manager.user_interaction.UserInterface;
 
 public class TitleScreenWorkflow implements Workflow {
     private final UserInterface userInterface;
