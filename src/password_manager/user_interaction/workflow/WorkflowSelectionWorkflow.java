@@ -5,10 +5,7 @@ import password_manager.user_interaction.UserInterface;
 import password_manager.user_interaction.step.PromptStep;
 import password_manager.user_interaction.step.TextStep;
 
-import java.util.HashMap;
-
 public class WorkflowSelectionWorkflow implements Workflow {
-    private final HashMap<Integer, String> selectableWorkflows = new HashMap<>();
     private final UserInterface userInterface;
     private final CredentialGathering credentialGathering;
     private Workflow nextWorkflow;
@@ -16,12 +13,6 @@ public class WorkflowSelectionWorkflow implements Workflow {
     public WorkflowSelectionWorkflow(UserInterface userInterface, CredentialGathering credentialGathering) {
         this.userInterface = userInterface;
         this.credentialGathering = credentialGathering;
-        setSelectableWorkflows();
-    }
-
-    private void setSelectableWorkflows() {
-        selectableWorkflows.put(1, "Create credential");
-        selectableWorkflows.put(99, "Exit application");
     }
 
     public Workflow getNextWorkflow() {
@@ -47,8 +38,8 @@ public class WorkflowSelectionWorkflow implements Workflow {
 
     private String createSelectableWorkflowsMessage() {
         StringBuilder stb = new StringBuilder();
-        for (Integer key : selectableWorkflows.keySet()) {
-            stb.append(key).append(": ").append(selectableWorkflows.get(key)).append("\n");
+        for (WorkflowName workflowName : WorkflowName.values()) {
+            stb.append(workflowName.getId()).append(": ").append(workflowName.name()).append("\n");
         }
         return stb.toString();
     }
