@@ -21,7 +21,7 @@ public class MasterPasswordCreator {
 
     public boolean storePassword() {
         try {
-            String hash = hashPassword(masterPassword);
+            String hash = hashPassword();
             Files.createFile(FILE_PATH);
             Files.writeString(FILE_PATH, hash);
         } catch (NoSuchAlgorithmException e) {
@@ -34,9 +34,9 @@ public class MasterPasswordCreator {
         return true;
     }
 
-    private String hashPassword(String password) throws NoSuchAlgorithmException {
+    String hashPassword() throws NoSuchAlgorithmException {
         MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-        byte[] hash = messageDigest.digest(password.getBytes(StandardCharsets.UTF_8));
+        byte[] hash = messageDigest.digest(masterPassword.getBytes(StandardCharsets.UTF_8));
         return bytesToHex(hash);
     }
 
