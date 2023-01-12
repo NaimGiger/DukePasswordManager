@@ -38,7 +38,7 @@ public class WorkflowSelectionWorkflow implements Workflow {
 
     private String createSelectableWorkflowsMessage() {
         StringBuilder stb = new StringBuilder();
-        for (WorkflowName workflowName : WorkflowName.values()) {
+        for (SelectableWorkflow workflowName : SelectableWorkflow.values()) {
             stb.append(workflowName.getId()).append(": ").append(workflowName.name()).append("\n");
         }
         return stb.toString();

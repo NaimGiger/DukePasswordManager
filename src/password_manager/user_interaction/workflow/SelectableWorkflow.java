@@ -1,6 +1,6 @@
 package password_manager.user_interaction.workflow;
 
-public enum WorkflowName {
+public enum SelectableWorkflow {
     CREATE_CREDENTIAL(1),
     EXIT(99)
     ;
@@ -8,7 +8,7 @@ public enum WorkflowName {
 
     private final int id;
 
-    WorkflowName(int id) {
+    SelectableWorkflow(int id) {
         this.id = id;
     }
 
