@@ -1,10 +1,7 @@
 package password_manager.user_interaction;
 
 import password_manager.credential.CredentialGathering;
-import password_manager.user_interaction.workflow.EnterMasterPasswordWorkflow;
-import password_manager.user_interaction.workflow.TitleScreenWorkflow;
-import password_manager.user_interaction.workflow.Workflow;
-import password_manager.user_interaction.workflow.WorkflowSelectionWorkflow;
+import password_manager.user_interaction.workflow.*;
 
 public class WorkflowExecutor {
     private final UserInterface userInterface;
@@ -20,6 +17,8 @@ public class WorkflowExecutor {
         titleScreenWorkflow.start();
         EnterMasterPasswordWorkflow enterMasterPasswordWorkflow = new EnterMasterPasswordWorkflow(userInterface);
         enterMasterPasswordWorkflow.start();
+        CredentialLoadWorkflow credentialLoadWorkflow = new CredentialLoadWorkflow(userInterface, credentialGathering);
+        credentialLoadWorkflow.start();
         while (true) {
             WorkflowSelectionWorkflow workflowSelector = new WorkflowSelectionWorkflow(userInterface, credentialGathering);
             workflowSelector.start();

@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CredentialGathering {
-    private final List<Credential> credentials = new ArrayList<>();
+    private List<Credential> credentials = new ArrayList<>();
 
     public List<Credential> getCredentials() {
         return credentials;
+    }
+
+    public void setCredentials(List<Credential> credentials) {
+        this.credentials = credentials;
     }
 
     public Credential createCredential(String title) throws Exception {
@@ -15,4 +19,5 @@ public class CredentialGathering {
         credentials.add(credential);
         return credential;
     }
+
 }

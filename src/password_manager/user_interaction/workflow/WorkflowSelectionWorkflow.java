@@ -26,12 +26,13 @@ public class WorkflowSelectionWorkflow implements Workflow {
             PromptStep workflowPrompt = new PromptStep(userInterface, "Select a workflow");
             workflowPrompt.execute();
             String workflowSelection = workflowPrompt.getUserInput().strip();
-            if (workflowSelection.equals("1")) {
-                nextWorkflow = new CreateCredentialWorkflow(userInterface, credentialGathering);
-            } else if(workflowSelection.equals("99")) {
-                nextWorkflow = new ExitWorkflow();
-            } else {
-                new TextStep(userInterface, "Invalid workflow number: " + workflowSelection).execute();
+            switch (workflowSelection) {
+                case "1" -> nextWorkflow = new CreateCredentialWorkflow(userInterface, credentialGathering);
+                case "2" -> nextWorkflow = new ShowCredentialWorkflow(userInterface, credentialGathering);
+                case "99" -> nextWorkflow = new ExitWorkflow(userInterface, credentialGathering);
+            }
+            if (nextWorkflow == null) {
+                    new TextStep(userInterface, "Invalid workflow number: " + workflowSelection).execute();
             }
         }
     }

@@ -12,11 +12,15 @@ public class Integrator {
         for (String line : lines) {
             String[] columns = line.split(";");
             Credential credential = new Credential(columns[0]);
-            if (!columns[1].equals("null")) {
-                credential.setUsername(columns[1]);
-            }
-            if (!columns[2].equals("null")) {
-                credential.setPassword(columns[2]);
+            if (columns.length > 1) {
+                if (!columns[1].equals("null")) {
+                    credential.setUsername(columns[1]);
+                }
+                if (columns.length > 2) {
+                    if (!columns[2].equals("null")) {
+                        credential.setPassword(columns[2]);
+                    }
+                }
             }
             credentials.add(credential);
         }

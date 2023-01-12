@@ -7,7 +7,7 @@ import java.util.List;
 public class Extractor {
 
 
-    String createCsv(List<Credential> credentials) {
+    public String createCsv(List<Credential> credentials) {
         StringBuilder credentialCsv = new StringBuilder();
         for (Credential credential : credentials) {
             credentialCsv.append(createCredentialCsvLine(credential));

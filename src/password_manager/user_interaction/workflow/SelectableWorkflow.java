@@ -2,6 +2,7 @@ package password_manager.user_interaction.workflow;
 
 public enum SelectableWorkflow {
     CREATE_CREDENTIAL(1),
+    SHOW_CREDENTIALS(2),
     EXIT(99)
     ;
 
