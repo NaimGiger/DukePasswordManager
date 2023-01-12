@@ -1,21 +1,18 @@
-package password_manager.persistency;
+package password_manager.persistence;
 
 import password_manager.credential.Credential;
 
-import javax.crypto.*;
-import java.nio.charset.StandardCharsets;
+import java.util.List;
 
-public class Encryptor {
+public class Extractor {
 
-    public static final String ALGORITHM = "AES";
 
-    byte[] encryptText(String text) throws Exception {
-        KeyGenerator keyGenerator = KeyGenerator.getInstance(ALGORITHM);
-        SecretKey key = keyGenerator.generateKey();
-        Cipher cipher = Cipher.getInstance(ALGORITHM);
-        cipher.init(Cipher.ENCRYPT_MODE, key);
-
-        return cipher.doFinal(text.getBytes(StandardCharsets.UTF_8));
+    String createCsv(List<Credential> credentials) {
+        StringBuilder credentialCsv = new StringBuilder();
+        for (Credential credential : credentials) {
+            credentialCsv.append(createCredentialCsvLine(credential));
+        }
+        return credentialCsv.toString();
     }
 
     String createCredentialCsvLine(Credential credential)  {

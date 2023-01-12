@@ -1,14 +1,14 @@
-package password_manager.persistency;
+package password_manager.persistence;
 
 import org.junit.jupiter.api.Test;
 import password_manager.credential.Credential;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class EncryptorTest {
+public class ExtractorTest {
     @Test
     void newCredential_createCsvLine_correctCsvLine() throws Exception {
-        Encryptor encryptor = new Encryptor();
+        Extractor encryptor = new Extractor();
         Credential credential = new Credential("cred1");
         credential.setUsername("hans123");
 

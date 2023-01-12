@@ -1,5 +1,7 @@
 package password_manager.credential;
 
+import java.util.Objects;
+
 public class Credential {
     private String title;
     private String username;
@@ -58,5 +60,18 @@ public class Credential {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Credential that = (Credential) o;
+        return title.equals(that.title) && Objects.equals(username, that.username) && Objects.equals(password, that.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, username, password);
     }
 }
