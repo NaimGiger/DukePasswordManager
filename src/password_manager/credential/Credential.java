@@ -2,6 +2,9 @@ package password_manager.credential;
 
 import java.util.Objects;
 
+/**
+ * A Credentials represents a Single record with a title and optional username and/or password
+ */
 public class Credential {
     private String title;
     private String username;
@@ -23,6 +26,9 @@ public class Credential {
         return username;
     }
 
+    /**
+    * can't contain ; or \n because these characters are reserved for csv generation
+     */
     public void setTitle(String title) throws Exception {
         if (!fieldContentIsSafe(title)) {
             throw new Exception("Contains invalid char: ';'");
@@ -30,6 +36,9 @@ public class Credential {
         this.title = title;
     }
 
+    /**
+     * can't contain ; or \n because these characters are reserved for csv generation
+     */
     public void setPassword(String password) throws Exception {
         if (!fieldContentIsSafe(password)) {
             throw new Exception("Contains invalid char: ';'");
@@ -37,6 +46,9 @@ public class Credential {
         this.password = password;
     }
 
+    /**
+     * can't contain ; or \n because these characters are reserved for csv generation
+     */
     public void setUsername(String username) throws Exception {
         if (!fieldContentIsSafe(username)) {
             throw new Exception("Contains invalid char: ';'");
@@ -44,6 +56,9 @@ public class Credential {
         this.username = username;
     }
 
+    /**
+    * Check if a field contains ; or \n
+     */
      public boolean fieldContentIsSafe(String fieldContent) {
         for (char currentChar : fieldContent.toCharArray()) {
             if (currentChar == ';' || currentChar == '\n') {

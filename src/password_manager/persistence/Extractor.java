@@ -4,9 +4,17 @@ import password_manager.credential.Credential;
 
 import java.util.List;
 
+/**
+ * <p>
+ *     This class is to extract credentials to csv
+ * </p>
+ */
 public class Extractor {
 
-
+    /**
+     * @param credentials credentials as a List
+     * @return Csv of all credentials as a String (field separator = ;, line separator = \n)
+     */
     public String createCsv(List<Credential> credentials) {
         StringBuilder credentialCsv = new StringBuilder();
         for (Credential credential : credentials) {

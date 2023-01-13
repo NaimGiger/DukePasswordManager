@@ -8,6 +8,9 @@ public class CredentialLoader {
         return Files.exists(CredentialSaver.FILE_PATH);
     }
 
+    /**
+     * @return encrypted csv of credentials saved at {@link CredentialSaver#FILE_PATH}
+     */
     public String getCredentialsCsv() throws IOException {
         return Files.readString(CredentialSaver.FILE_PATH);
     }

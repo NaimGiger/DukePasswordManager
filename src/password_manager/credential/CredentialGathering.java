@@ -3,6 +3,9 @@ package password_manager.credential;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+* This class creates and stores credentials
+ */
 public class CredentialGathering {
     private List<Credential> credentials = new ArrayList<>();
 

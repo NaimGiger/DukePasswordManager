@@ -12,6 +12,11 @@ public class ExitWorkflow implements Workflow {
         this.credentialGathering = credentialGathering;
     }
 
+    /**
+     * <p>
+     *     saveCredentials and exit application
+     * </p>
+     */
     @Override
     public void start() throws Exception {
         SaveCredentialsWorkflow saveCredentialsWorkflow = new SaveCredentialsWorkflow(userInterface, credentialGathering);

@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Integrator {
+    /**
+     * @param credentialCsv credentials as csv, get csv form {@link CredentialLoader#getCredentialsCsv()}
+     * @return credentials as List
+     */
     public List<Credential> createCredentials(String credentialCsv) throws Exception {
         String[] lines = credentialCsv.split("\n");
         List<Credential> credentials = new ArrayList<>();
