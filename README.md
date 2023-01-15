@@ -1,5 +1,7 @@
 ![DukePasswordManager Logo](https://github.com/NaimGiger/DukePasswordManager/blob/main/logo.png)
 
+
+## Installation
 You need to install the correct JDK. To do that open the project in IntelliJ and a blue banner will show up. Select 'Install JDK'.
 
 ## Usage
